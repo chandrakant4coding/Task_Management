@@ -62,14 +62,14 @@ const TaskList = ({ handleEdit, status }) => {
                 <td>{todo?.description}</td>
                 <td>{todo?.status}</td>
                 <td
-                  style={{
+                
+                >
+                 <span   style={{
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
                     gap: "5px",
-                  }}
-                >
-                  <PencilLine
+                  }}> <PencilLine
                     size={15}
                     onClick={() => handleEdit(todo)}
                     style={{ color: "#dddd22", cursor: "pointer" }}
@@ -92,7 +92,7 @@ const TaskList = ({ handleEdit, status }) => {
                     >
                       View
                     </button>
-                  </Link>
+                  </Link></span>
                 </td>
               </tr>
             ))}

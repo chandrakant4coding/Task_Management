@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import TaskList from "../components/TaskList";
 import TaskForm from "../components/TaskForm";
-import { Modal } from "antd";
-import { Empty } from "antd";
+import { Modal, Typography } from "antd"; // Import Typography from antd
+
+const { Title } = Typography; // Destructure Title component
+
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTodo, setSelectedTodo] = useState(null);
@@ -42,7 +44,12 @@ const Home = () => {
         <TaskForm selectedTodo={selectedTodo} setIsModalOpen={setIsModalOpen} />
       </Modal>
 
-      <TaskList handleEdit={handleEdit} status={status} />
+      <div>
+        <Title level={2} style={{color: "#333" }}>
+          Task Management
+        </Title>
+        <TaskList handleEdit={handleEdit} status={status} />
+      </div>
     </Wrapper>
   );
 };
